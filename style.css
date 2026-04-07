@@ -1,0 +1,551 @@
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. GLOBAL RESETS & FONTS */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF9F3; 
+    width: 100%;
+    /* Hide scrollbars */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* 2. BACKGROUND IMAGE */
+.main-background {
+    background-image: url('images/basepage.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    width: 100%;
+    aspect-ratio: 1000 / 1730; 
+    position: relative;
+    margin: 0;
+}
+
+/* 3. NAVIGATION BAR */
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 100;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.nav-section:first-child { justify-content: flex-end; }
+.nav-section:last-child { justify-content: flex-start; }
+
+.nav-item {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.nav-logo img {
+    height: 60px;
+    margin: 0 30px;
+}
+
+.nav-line {
+    height: 1px;
+    background-color: #000;
+}
+
+.nav-line.long { width: 120px; }
+.nav-line.short { width: 40px; }
+
+/* 4. SHOP NOW BUTTON */
+.shop-now-btn {
+    position: absolute;
+    top: 23.3%; /* Tiny tweak for better alignment */
+    left: 20%; 
+    background-color: #E81D7D;
+    color: white;
+    text-decoration: none;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 35px;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    z-index: 10;
+    transform: translateX(-50%); /* Ensures it centers on the anchor point */
+}
+
+.shop-now-btn:hover {
+    background-color: #C11768;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* 5. CATALOG SECTION & CAROUSEL */
+.catalog-overlay {
+    position: absolute;
+    top: 38%; /* Moves it up slightly into the lily space */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    z-index: 5;
+}
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.cat-btn {
+    background: none;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    color: #E81D7D;
+    font-size: 18px;
+    cursor: pointer;
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.cat-btn.active {
+    font-weight: 700;
+    border-bottom: 2px solid #E81D7D;
+}
+
+/* THE SLIDER CORE */
+.gallery-viewport {
+    width: 100%;
+    overflow: hidden; 
+    padding: 40px 0;
+}
+
+/* This is the ribbon that actually moves */
+.slider-ribbon {
+    display: flex;
+    width: 400%; /* 4 categories = 400% */
+    transition: transform 0.8s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Each group takes up 1/4 of the ribbon's width */
+.category-group {
+    width: 25%; 
+    display: flex;
+    justify-content: center;
+}
+
+.card-grid {
+    display: flex;
+    gap: 25px; /* Aesthetic margin between cards */
+    justify-content: center;
+    width: 100%;
+}
+
+/* 6. FLOWER CARDS */
+.flower-card {
+    background-color: #FF85C1;
+    border-radius: 30px;
+    padding: 15px;
+    width: 280px; 
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.flower-card img {
+    width: 100%;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.flower-card:hover {
+    transform: scale(1.08) translateY(-10px);
+    background-color: #E81D7D;
+    box-shadow: 0 15px 30px rgba(232, 29, 125, 0.4);
+}
+
+.card-info {
+    color: white;
+    text-align: center;
+    font-family: 'League Spartan', sans-serif;
+    margin-top: 15px;
+}
+
+.card-info h3 { font-size: 14px; margin-bottom: 5px; }
+.card-info p { font-size: 12px; }
+
+.shop-now-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px; /* This creates the gap between the cards and the button */
+    padding-bottom: 40px; /* Extra space at the very bottom of the section */
+    position: relative;
+    z-index: 100;
+}
+
+.catalog-shop-btn {
+    background-color: #E81D7D;
+    color: white;
+    text-decoration: none;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 40px;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 29, 125, 0.2);
+}
+
+.catalog-shop-btn:hover {
+    background-color: #C11768;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(232, 29, 125, 0.4);
+}
+
+.reviews-container {
+    position: absolute;
+    /* Adjust this percentage until the reviews sit right under the REVIEWS banner */
+    top: 130%; 
+    left: 43%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.review-item {
+    flex: 1;
+    max-width: 1000px;
+}
+
+.review-item img {
+    width: 150%;
+    height: auto;
+    /* This makes them float nicely over the background petals */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); 
+    transition: transform 0.3s ease;
+}
+
+.review-item img:hover {
+    transform: scale(1.05);
+}
+
+.socials-container {
+    position: absolute;
+    /* Adjust this percentage until it sits perfectly under the SOCIALS banner */
+    top: 1600%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.socials-text {
+    font-family: 'Quicksand', sans-serif; /* Matching your nav font */
+    color: #E81D7D;
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.socials-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between FB and Messenger logos */
+}
+
+.social-link img {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* The Hover Effect */
+.social-link img:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 5px 15px rgba(232, 29, 125, 0.4));
+}
+
+/* Shop Starts here */
+
+/* --- SHOP PAGE BASE STYLING --- */
+
+.shop-only-background {
+    background-image: url('images/shoppage.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    width: 100%;
+    /* Keep aspect ratio to match your background image height */
+    aspect-ratio: 1000 / 1730; 
+    position: relative;
+    /* Prevents horizontal scrolling on the whole page */
+    overflow-x: hidden; 
+}
+
+/* Fix navbar positioning for the shop page */
+.shop-only-background .navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    z-index: 100;
+}
+
+/* --- SHOP CONTENT OVERLAY --- */
+
+.shop-content-overlay {
+    position: relative;
+    /* Adjust this margin to move the whole shop up or down */
+    margin: 1250px auto 0 auto; 
+    width: 95%;
+    max-width: 1200px;
+    z-index: 10;
+}
+
+/* THE VIEWPORT - The 'window' that hides the other categories */
+.shop-viewport {
+    width: 100%;
+    overflow: hidden !important; 
+    position: relative;
+}
+
+/* THE RIBBON - THIS IS THE KEY FIX */
+.shop-ribbon {
+    display: flex;
+    flex-direction: row; /* Force categories side-by-side */
+    width: 400%;        /* 4 categories = 400% width */
+    transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+    align-items: flex-start;
+}
+
+/* EACH CATEGORY SECTION */
+.shop-section {
+    width: 25%; /* Each section takes 1/4 of the 400% ribbon */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+/* THE GRID FOR CARDS */
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* --- FLOWER CARDS & HOVER EFFECTS --- */
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 280px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-card {
+    border-radius: 30px;
+    overflow: hidden;
+    background: #FF85C1; /* Added background color to match your index cards */
+    position: relative;
+}
+
+.card-media-stack {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.text-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(232, 29, 125, 0.9); 
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* --- THE FIX FOR VANISHING IMAGES --- */
+.card-link:hover {
+    transform: translateY(-10px);
+}
+
+.card-link:hover .main-image {
+    opacity: 0; /* Image hides */
+}
+
+.card-link:hover .text-description {
+    opacity: 1; /* Description shows */
+}
+
+.card-meta {
+    padding: 15px;
+    text-align: center;
+}
+
+.boq-name {
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.boq-price {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
+/* --- COMING SOON FIXES --- */
+
+.coming-soon-container {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coming-soon-img {
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+/* Final Global Force Fix for Scrollbars */
+html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- ABOUT US PAGE (New Section) --- */
+
+/* Force the body to allow scrolling on the very tall image */
+.about-page {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.about-background {
+    /* Path to your About Us image */
+    background-image: url('images/aboutus.png'); 
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto; /* Scaled to width, height is natural */
+    width: 100%;
+    
+    /* CRITICAL FIX: The specific aspect ratio of that long PNG */
+    /* Check the original image file properties for height vs width to adjust these numbers */
+    /* This ensures the browser knows the full shape to scroll to */
+    aspect-ratio: 1000 / 1730; 
+    
+    position: relative;
+    min-height: 100vh; /* Minimum 1 full screen height */
+}
+
+/* If you use margins on your text/divs, target them like this: */
+.about-background h1 {
+    margin-top: 500px; /* Precise positioning from the top of the PNG */
+}
+
+.about-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF9F3; /* Matches your body color */
+}
+
+.about-full-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Ensure the navbar stays visible over the image */
+.about-container + .navbar {
+    position: absolute;
+    top: 20px;
+}
+
+.social-icon-btn {
+    /* Increase this value to make the logos larger */
+    width: 200px; 
+    height: auto;
+    transition: transform 0.2s ease;
+    /* Optional: Ensure they have enough space between them */
+    margin: 0 15px; 
+}
+
+/* Adjust the container position if the larger size moves them off-center */
+.social-overlay {
+    position: absolute;
+    top: 57%; /* Adjust this % if the larger icons hit the text above */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 40px; /* Increased gap to accommodate larger icons */
+    line-height: normal;
+}

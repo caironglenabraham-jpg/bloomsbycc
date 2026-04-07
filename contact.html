@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Blooms by CC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styling to overlay social icons over the background image */
+        .contact-container {
+            position: relative;
+            width: 100%;
+            line-height: 0;
+        }
+
+        .contact-bg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .social-overlay {
+            position: absolute;
+            /* Adjust this percentage to move icons up or down based on your image */
+            top: 65%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 30px;
+            line-height: normal;
+        }
+
+        .social-icon-btn {
+            width: 50px; /* Adjust size of icons here */
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .social-icon-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0; background-color: #FFF9F3;">
+
+    <nav class="navbar">
+        <div class="nav-section">
+            <span class="nav-line long"></span>
+            <a href="index.html" class="nav-item">HOME</a>
+            <span class="nav-line short"></span>
+            <a href="contact.html" class="nav-item">CONTACT</a>
+        </div>
+
+        <div class="nav-logo">
+            <img src="images/logo1.png" alt="Blooms by CC Logo">
+        </div>
+
+        <div class="nav-section">
+            <a href="about.html" class="nav-item">ABOUT US</a>
+            <span class="nav-line short"></span>
+            <a href="shop.html" class="nav-item">SHOP</a>
+            <span class="nav-line long"></span>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <img src="images/contact.png" alt="Contact Information" class="contact-bg">
+
+        <div class="social-overlay">
+            <a href="https://www.facebook.com/profile.php?id=61555575451490" target="_blank">
+                <img src="images/facebooklogo.png" alt="Facebook" class="social-icon-btn">
+            </a>
+            <a href="https://m.me/61555575451490" target="_blank">
+                <img src="images/messengerlogo.png" alt="Messenger" class="social-icon-btn">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

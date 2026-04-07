@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Blooms by CC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="shop-only-background">
+        <nav class="navbar">
+            <div class="nav-section">
+                <span class="nav-line long"></span>
+                <a href="index.html" class="nav-item">HOME</a>
+                <span class="nav-line short"></span>
+                <a href="contact.html" class="nav-item">CONTACT</a>
+            </div>
+
+            <div class="nav-logo">
+                <img src="images/logo1.png" alt="Blooms by CC Logo">
+            </div>
+
+            <div class="nav-section">
+                <a href="about.html" class="nav-item">ABOUT US</a>
+                <span class="nav-line short"></span>
+                <a href="shop.html" class="nav-item">SHOP</a>
+                <span class="nav-line long"></span>
+            </div>
+        </nav>
+
+        <section class="shop-content-overlay">
+            <div class="category-nav">
+                <button class="cat-btn active" onclick="slideShop(0, this)">Dried Flowers</button>
+                <button class="cat-btn" onclick="slideShop(1, this)">Fresh Flowers</button>
+                <button class="cat-btn" onclick="slideShop(2, this)">Artificial Flowers</button>
+                <button class="cat-btn" onclick="slideShop(3, this)">Satin Flowers</button>
+            </div>
+
+            <div class="shop-viewport">
+                <div class="shop-ribbon" id="shopRibbon">
+                    
+                    <div class="shop-section">
+                        <div class="carousel-grid">
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq1.jpg" class="main-image"><div class="text-description"><h3>BOUQUET 1</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 1</p><p class="boq-price">PHP 200</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq2.jpg" class="main-image"><div class="text-description"><h3>BOUQUET 2</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 2</p><p class="boq-price">PHP 300</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq3.jpg" class="main-image"><div class="text-description"><h3>BOUQUET 3</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 3</p><p class="boq-price">PHP 400</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq4.jpg" class="main-image"><div class="text-description"><h3>BOUQUET 4</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 4</p><p class="boq-price">PHP 500</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq5.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 5</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 5</p><p class="boq-price">PHP 600</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq6.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 6</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 6</p><p class="boq-price">PHP 700</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq7.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 7</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 7</p><p class="boq-price">PHP 800</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq8.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 8</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 8</p><p class="boq-price">PHP 900</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq9.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 9</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 9</p><p class="boq-price">PHP 1000</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq10.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 10</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 10</p><p class="boq-price">PHP 1100</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq11.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 11</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 11</p><p class="boq-price">PHP 1200</p></div></div></a>
+                            <a href="images/payment.png" target="_blank" class="card-link"><div class="carousel-card"><div class="card-media-stack"><img src="images/boq12.jpeg" class="main-image"><div class="text-description"><h3>BOUQUET 12</h3><p>Click to pay via GCash QR code.</p></div></div><div class="card-meta"><p class="boq-name">BOUQUET 12</p><p class="boq-price">PHP 1300</p></div></div></a>
+                        </div>
+                    </div>
+
+                    <div class="shop-section"><div class="coming-soon-container"><img src="images/comingsoon.png" class="coming-soon-img"></div></div>
+                    <div class="shop-section"><div class="coming-soon-container"><img src="images/comingsoon.png" class="coming-soon-img"></div></div>
+                    <div class="shop-section"><div class="coming-soon-container"><img src="images/comingsoon.png" class="coming-soon-img"></div></div>
+
+                </div> 
+            </div> 
+        </section>
+    </div>
+
+    <script>
+        function slideShop(index, btn) {
+            const ribbon = document.getElementById('shopRibbon');
+            ribbon.style.transform = `translateX(-${index * 25}%)`;
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>

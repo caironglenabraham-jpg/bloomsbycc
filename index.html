@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooms by CC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-background">
+        <a href="shop.html" class="shop-now-btn">SHOP NOW</a>
+        <nav class="navbar">
+            <div class="nav-section">
+                <span class="nav-line long"></span>
+                <a href="index.html" class="nav-item">HOME</a>
+                <span class="nav-line short"></span>
+                <a href="contact.html" class="nav-item">CONTACT</a>
+            </div>
+            <div class="nav-logo">
+                <img src="images/logo1.png" alt="Blooms by CC Logo">
+            </div>
+            <div class="nav-section">
+                <a href="about.html" class="nav-item">ABOUT US</a>
+                <span class="nav-line short"></span>
+                <a href="shop.html" class="nav-item">SHOP</a>
+                <span class="nav-line long"></span>
+            </div>
+        </nav>
+
+        <section class="catalog-overlay">
+            <div class="shop-now-container">
+                <a href="shop.html" class="catalog-shop-btn">SHOP ALL FLOWERS</a>
+                <div class="socials-container">
+                    <p class="socials-text">feel free to reach us through our socials</p>
+                    <div class="socials-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61555575451490" target="_blank" class="social-link"><img src="images/facebooklogo.png" alt="Facebook"></a>
+                        <a href="https://www.facebook.com/profile.php?id=61555575451490" target="_blank" class="social-link"><img src="images/messengerlogo.png" alt="Messenger"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-container">
+                <div class="review-item"><img src="images/rev1.png" alt="Carlos Review"></div>
+                <div class="review-item"><img src="images/rev2.png" alt="Farquaad Review"></div>
+                <div class="review-item"><img src="images/rev3.png" alt="Amara Review"></div>
+            </div>
+
+            <div class="category-nav">
+                <button class="cat-btn active" onclick="moveRibbon(0)">Dried Flowers</button>
+                <button class="cat-btn" onclick="moveRibbon(1)">Fresh Flowers</button>
+                <button class="cat-btn" onclick="moveRibbon(2)">Artificial Flowers</button>
+                <button class="cat-btn" onclick="moveRibbon(3)">Satin Flowers</button>
+            </div>
+
+            <div class="gallery-viewport">
+                <div class="slider-ribbon" id="flowerRibbon">
+                    <div class="category-group">
+                        <div class="card-grid">
+                            <div class="flower-card"><img src="images/boq1.jpg"><div class="card-info"><h3>BOUQUET 1</h3><p>PHP 200</p></div></div>
+                            <div class="flower-card"><img src="images/boq2.jpg"><div class="card-info"><h3>BOUQUET 2</h3><p>PHP 300</p></div></div>
+                            <div class="flower-card"><img src="images/boq3.jpg"><div class="card-info"><h3>BOUQUET 3</h3><p>PHP 400</p></div></div>
+                            <div class="flower-card"><img src="images/boq4.jpg"><div class="card-info"><h3>BOUQUET 4</h3><p>PHP 500</p></div></div>
+                        </div>
+                    </div>
+                    <div class="category-group"><div class="card-grid"><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div></div></div>
+                    <div class="category-group"><div class="card-grid"><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div></div></div>
+                    <div class="category-group"><div class="card-grid"><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div><div class="flower-card"><img src="images/comingsoon.png"></div></div></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
